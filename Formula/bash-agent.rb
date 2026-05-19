@@ -7,39 +7,45 @@ class BashAgent < Formula
 
   depends_on "bash" => :run
   depends_on "gawk" => :run
-  depends_on "go" => :build
-  depends_on "rust" => :build
 
   def install
-    # Build Bash edition
+    # Build Bash edition (no compilation deps needed)
     system "bash", "scripts/build.sh", "dist/agent.sh"
     bin.install "dist/agent.sh" => "bash-agent"
 
-    # Build Go edition
-    ENV["GOCACHE"] = buildpath/"go/.gocache"
-    ENV["GOMODCACHE"] = buildpath/"go/.gomodcache"
-    system "go", "-C", "go", "mod", "download"
-    system "go", "-C", "go", "build",
-           "-ldflags=-s -w",
-           "-trimpath",
-           "-o", buildpath/"dist/goagent",
-           "./cmd/goagent"
-    bin.install "dist/goagent"
+    # Build Go edition — only if `go` is already available on the system
+    if which("go")
+      ENV["GOCACHE"] = buildpath/"go/.gocache"
+      ENV["GOMODCACHE"] = buildpath/"go/.gomodcache"
+      system "go", "-C", "go", "mod", "download"
+      system "go", "-C", "go", "build",
+             "-ldflags=-s -w",
+             "-trimpath",
+             "-o", buildpath/"dist/goagent",
+             "./cmd/goagent"
+      bin.install "dist/goagent"
+    else
+      opoo "go not found — skipping goagent build"
+    end
 
-    # Build Rust edition
-    system "cargo", "build", "--release",
-           "--manifest-path", "rust/Cargo.toml"
-    bin.install "rust/target/release/rustagent"
+    # Build Rust edition — only if `cargo` is already available on the system
+    if which("cargo")
+      system "cargo", "build", "--release",
+             "--manifest-path", "rust/Cargo.toml"
+      bin.install "rust/target/release/rustagent"
+    else
+      opoo "cargo not found — skipping rustagent build"
+    end
 
-    # Documentation
     doc.install "README.md"
     doc.install "CHANGELOG.md"
   end
 
   test do
-    # Test that all three binaries exist and are executable
     assert_predicate bin/"bash-agent", :executable?
-    assert_predicate bin/"goagent", :executable?
-    assert_predicate bin/"rustagent", :executable?
+
+    # Only test additional binaries if they were built
+    assert_predicate bin/"goagent", :executable? if bin/"goagent".exist?
+    assert_predicate bin/"rustagent", :executable? if bin/"rustagent".exist?
   end
 end
