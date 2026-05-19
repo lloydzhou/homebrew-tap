@@ -8,37 +8,60 @@ class BashAgent < Formula
   depends_on "bash" => :run
   depends_on "gawk" => :run
 
-  def install
-    # Homebrew sandboxes PATH, so add common tool locations for optional builds
-    ENV.prepend_path "PATH", "#{Dir.home}/.cargo/bin"
+  resource "goagent" do
+    on_macos do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/goagent-darwin-arm64"
+        sha256 "06fe6952073cb09e1bbfc7bd7eb7201fbf07dd635692b748c0598a6885493e5a"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/goagent-darwin-amd64"
+        sha256 "6d4bce9959249411930413debf671f695d53683f3c3d8de66a178e64e7640230"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/goagent-linux-arm64"
+        sha256 "478b9a25417458b993d1836f6d654cdee6e68ca68a47c9ce3366f17fe2027e0f"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/goagent-linux-amd64"
+        sha256 "1374888452e6d1adabba7b7047555d9ac12fa29284f1123938cd8191d97ebd7e"
+      end
+    end
+  end
 
-    # Build Bash edition (no compilation deps needed)
+  resource "rustagent" do
+    on_macos do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/rustagent-darwin-arm64"
+        sha256 "3fb141aacec491bac421998a603e2371ed21f2808e39f1dca702c5697a5ad1ab"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/rustagent-darwin-amd64"
+        sha256 "1bb120706f1d6e28a292a045c59f8537b444f6d0c2bf8c31750f30a625442d93"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/rustagent-linux-arm64"
+        sha256 "9b731884e9060ad15e7657d9be0eec7281669b14274a36488b11ba5cc79ffe98"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.3/rustagent-linux-amd64"
+        sha256 "6ca9ba455513b41eb1dc5c2df113f5a8a8aee61b980262f06828ca5a802f500e"
+      end
+    end
+  end
+
+  def install
+    # Build bash agent from source (fast, no compilation deps)
     system "bash", "scripts/build.sh", "dist/agent.sh"
     bin.install "dist/agent.sh" => "bash-agent"
 
-    # Build Go edition — skip if `go` not available
-    if system("command -v go >/dev/null 2>&1")
-      ENV["GOCACHE"] = buildpath/"go/.gocache"
-      ENV["GOMODCACHE"] = buildpath/"go/.gomodcache"
-      system "go", "-C", "go", "mod", "download"
-      system "go", "-C", "go", "build",
-             "-ldflags=-s -w",
-             "-trimpath",
-             "-o", buildpath/"dist/goagent",
-             "./cmd/goagent"
-      bin.install "dist/goagent"
-    else
-      opoo "go not found — skipping goagent build"
-    end
-
-    # Build Rust edition — skip if `cargo` not available
-    if system("command -v cargo >/dev/null 2>&1")
-      system "cargo", "build", "--release",
-             "--manifest-path", "rust/Cargo.toml"
-      bin.install "rust/target/release/rustagent"
-    else
-      opoo "cargo not found — skipping rustagent build"
-    end
+    # Install pre-compiled goagent and rustagent
+    resource("goagent").stage { bin.install Dir["*"].first => "goagent" }
+    resource("rustagent").stage { bin.install Dir["*"].first => "rustagent" }
 
     doc.install "README.md"
     doc.install "CHANGELOG.md"
@@ -46,9 +69,7 @@ class BashAgent < Formula
 
   test do
     assert_predicate bin/"bash-agent", :executable?
-
-    # Only test additional binaries if they were built
-    assert_predicate bin/"goagent", :executable? if bin/"goagent".exist?
-    assert_predicate bin/"rustagent", :executable? if bin/"rustagent".exist?
+    assert_predicate bin/"goagent", :executable?
+    assert_predicate bin/"rustagent", :executable?
   end
 end
