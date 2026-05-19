@@ -9,12 +9,15 @@ class BashAgent < Formula
   depends_on "gawk" => :run
 
   def install
+    # Homebrew sandboxes PATH, so add common tool locations for optional builds
+    ENV.prepend_path "PATH", "#{Dir.home}/.cargo/bin"
+
     # Build Bash edition (no compilation deps needed)
     system "bash", "scripts/build.sh", "dist/agent.sh"
     bin.install "dist/agent.sh" => "bash-agent"
 
-    # Build Go edition — only if `go` is already available on the system
-    if which("go")
+    # Build Go edition — skip if `go` not available
+    if system("command -v go >/dev/null 2>&1")
       ENV["GOCACHE"] = buildpath/"go/.gocache"
       ENV["GOMODCACHE"] = buildpath/"go/.gomodcache"
       system "go", "-C", "go", "mod", "download"
@@ -28,8 +31,8 @@ class BashAgent < Formula
       opoo "go not found — skipping goagent build"
     end
 
-    # Build Rust edition — only if `cargo` is already available on the system
-    if which("cargo")
+    # Build Rust edition — skip if `cargo` not available
+    if system("command -v cargo >/dev/null 2>&1")
       system "cargo", "build", "--release",
              "--manifest-path", "rust/Cargo.toml"
       bin.install "rust/target/release/rustagent"
