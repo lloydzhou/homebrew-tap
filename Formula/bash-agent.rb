@@ -2,7 +2,7 @@ class BashAgent < Formula
   desc "A lightweight coding agent that runs in your terminal"
   homepage "https://github.com/lloydzhou/bash-agent"
   url "https://github.com/lloydzhou/bash-agent/archive/refs/tags/v3.0.4.tar.gz"
-  sha256 "18d40cfb6379108e72133b48c35cdef221d9ee699b2a0ded67372d79a9b3c1d5"
+  sha256 "30a5c25ba6b50ef24c126249241c92ad15e2c2a46966fcb7385b6d551a686721"
   license "MIT"
 
   depends_on "bash" => :run
@@ -12,21 +12,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/goagent-darwin-arm64"
-        sha256 "64994936fc015bee34aa463ccee2ddc1a44fec45c961fa9d04058554e836f3cb"
+        sha256 "448567118ad0ec659fdd90cde86ac4451375bcf2482e9aacb578afbe6743acc9"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/goagent-darwin-amd64"
-        sha256 "afa1139d3895469edbedca3b65cb614ff22dfadbb568b2047ad23df7523eb5f2"
+        sha256 "1b628bdbf9d8d257439963138df0c383d4f3bf025b99a941a4ce043bde3c9a28"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/goagent-linux-arm64"
-        sha256 "1ab8d606c6f185f97e98d570ffea2ed822fee74518079a0d6b1fcabc96558627"
+        sha256 "54aef339a4190a76888d06b14bbe63d360ff1d6377f74abc80d66f598618af03"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/goagent-linux-amd64"
-        sha256 "8775b77d330d2b5335788c8a67788501f290da194cc72fcf42b14cd50b6fdf9f"
+        sha256 "5a20133e50108a60d9f3344e654e6c92797f98c4514c942cd49d722c3cde9a82"
       end
     end
   end
@@ -35,7 +35,7 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/rustagent-darwin-arm64"
-        sha256 "5bbe9ab14e1509aeaf3d1c29a4dc31f358a546fb450a7b292f2677d2f43eafb6"
+        sha256 "ec24f944245476f4b914222048679a362ee8d319a08ede0fb47aaf27149e1f27"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.4/rustagent-darwin-amd64"
