@@ -1,6 +1,8 @@
 class BashAgent < Formula
   desc "A lightweight coding agent that runs in your terminal"
   homepage "https://github.com/lloydzhou/bash-agent"
+  url "https://github.com/lloydzhou/bash-agent/archive/refs/tags/v3.0.5.tar.gz"
+  sha256 "d2b7af974a43bee99b88bd5ba3bf97838451db06d45edf7441f2c73cdbb4f688"
   license "MIT"
 
   depends_on "bash" => :run
