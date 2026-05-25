@@ -40,7 +40,7 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-darwin-arm64"
-        sha256 "d367496bb8eb2161458cfa19f728ba2d6b0b3edf395cfad02daf041c12eff2ec"
+        sha256 "00317e715ad98be03faeb62c07aeb3cff708ee96fb168e73fa7d783c0b2da12c"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-darwin-amd64"
