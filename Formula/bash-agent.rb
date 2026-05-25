@@ -17,21 +17,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/goagent-darwin-arm64"
-        sha256 "0dd126123aa14eaee1241045f5c216acefd41f703bd3428c4b0a30c90bee7346"
+        sha256 "9104619616ffde9c4040c7808aceb63e37e6215b4a49ec018295d4e98cdf590f"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/goagent-darwin-amd64"
-        sha256 "cce8e005f03cd87ec392ddf10db5891b02a4e81799b2873544ea8a782240dda6"
+        sha256 "0096a49e6e03cf18ebb8da07bd91549a9245a00d6916b59fa66a5cc9bd9ced8a"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/goagent-linux-arm64"
-        sha256 "84c04658d8d199ba9598ae82f79349242467d2d02728bbec7bf581f7049f4fb8"
+        sha256 "0339875308dc7079a9870c90e8b482fc687b53af7afd84c26c7cc4f185588a7e"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/goagent-linux-amd64"
-        sha256 "f3ba59c7922d520e0b4fa61f9d6c61ac64b7b37cebdebd913d07c93983aa43c3"
+        sha256 "9a4c248c8e2bdb587b44296b8832275c6e3f7cd22797250b7b13f872ba19d379"
       end
     end
   end
@@ -40,21 +40,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-darwin-arm64"
-        sha256 "a223f3e2cb81cdd242ff9b5b3456faf04b97552fe207a71329f864b00f08a0ed"
+        sha256 "d367496bb8eb2161458cfa19f728ba2d6b0b3edf395cfad02daf041c12eff2ec"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-darwin-amd64"
-        sha256 "9a0467e54d6ee2717f6a4d79906a63fec932a587a7c67050c198373ba62a812b"
+        sha256 "fcfd26773afa09bfbb20ffcf5218d8f130ef32b8fbc4a50fb04bf4b30e2c8c3c"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-linux-arm64"
-        sha256 "aa92b74ef47b0dcffd4db03f6d79b2d041e8b473f0fa396a6388fc7ddf14629c"
+        sha256 "649136d5937417f33d4b2948152533b8b80807380210fe51e2863d4f7239b212"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v3.0.7/rustagent-linux-amd64"
-        sha256 "2d209ed9cd24d853d02dd3d6f4aad7bf7ae640ddf2d3a4f90bea9c12362639d1"
+        sha256 "08032683960909c5fb496f5c01acebe9893b93f86f5ddbb3e89b76eb34c6753a"
       end
     end
   end
