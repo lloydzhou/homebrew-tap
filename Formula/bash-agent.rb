@@ -91,7 +91,10 @@ class BashAgent < Formula
     resource("agent").stage { bin.install Dir["*"].first => "bash-agent" }
     resource("goagent").stage { bin.install Dir["*"].first => "goagent" }
     resource("rustagent").stage { bin.install Dir["*"].first => "rustagent" }
-    resource("cagent").stage { bin.install Dir["*"].first => "cagent" }
+    resource("cagent").stage do
+      bin.install Dir["*"].first => "cagent"
+      bin.install_symlink bin/"cagent" => "ccagent"
+    end
     resource("tcode").stage { bin.install Dir["*"].first => "tcode" }
 
     doc.install "README.md"
@@ -103,6 +106,7 @@ class BashAgent < Formula
     assert_predicate bin/"goagent", :executable?
     assert_predicate bin/"rustagent", :executable?
     assert_predicate bin/"cagent", :executable?
+    assert_predicate bin/"ccagent", :executable?
     assert_predicate bin/"tcode", :executable?
   end
 end
