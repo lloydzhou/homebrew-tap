@@ -2,7 +2,7 @@ class BashAgent < Formula
   desc "A lightweight coding agent that runs in your terminal"
   homepage "https://github.com/lloydzhou/bash-agent"
   url "https://github.com/lloydzhou/bash-agent/archive/refs/tags/v4.2.2.tar.gz"
-  sha256 "615a76a7e84544362a51f93d6f9c5d0abc4630739f06d1b67fdd9272b5301343"
+  sha256 "a9bc205e2419e0b684e594632849c0d12132e2be4076cb6aa7b3f18a372e6607"
   license "MIT"
 
   depends_on "bash" => :run
@@ -17,21 +17,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/goagent-darwin-arm64"
-        sha256 "67c662aaf5d108c0dac677594596a13d59deb0ca65ef31a114d747f32547865a"
+        sha256 "48171a455b31e8374437a5c02bde27251247a843192ff3ad5815ba685ee9238b"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/goagent-darwin-amd64"
-        sha256 "efba85f846bf1362adb6aa0a3b5d1b352c19d709e778a409c192866e25d1a8ee"
+        sha256 "d7c84438a53a7387779b807bc3317ad20cb3f3663aeab3ca2d34257d6a879c07"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/goagent-linux-arm64"
-        sha256 "d4c0c8ded3b5a6af4651b73066d9cbab50870fd1909b73f34d63b811c87c0d6f"
+        sha256 "e327ec6660dbbfd36f8859361aa1e88a1ae17d88d4652f1a384490b02f20700c"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/goagent-linux-amd64"
-        sha256 "69d1f58412ceb717fe076018b3ebf4cb28444952f8280add50c5cf69b6ad5015"
+        sha256 "244a752f9201d6a37c42153505d21ba0b34a327173b258c8b170e4c44018abfb"
       end
     end
   end
@@ -40,21 +40,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/rustagent-darwin-arm64"
-        sha256 "081459191ca42b41488de25b847207523646a86e05c1eea48ecc97a2316f41ba"
+        sha256 "e2838013829a8191cba4838de8496f093d4922c44cbcb7b757af142ef9cd7741"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/rustagent-darwin-amd64"
-        sha256 "326a45f3babc5cddc311180432ba1e73e79f7a6b6167abd420a0ef2373fc15a4"
+        sha256 "aaaefb7531ec773d5a78f7cd7a14d31f7b0f7da0c8e69a758d99ed5d07644529"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/rustagent-linux-arm64"
-        sha256 "ff85691b22ca5cb2515c12ae0aaa747b05b1eb8c22e8d4ea7158fa86a170914a"
+        sha256 "8cf206f774b92e1d9e1ba93845d2f5f190ae1380b4621fb7378db24c61eae516"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/rustagent-linux-amd64"
-        sha256 "9621e9474c5a8ea9c1588c070c1902cbe735bf848fccb343758e5212273168a9"
+        sha256 "058465975419b7ef6394532d9b3119dcb25d5c57f012ba1f1d4457320eddb461"
       end
     end
   end
@@ -63,21 +63,21 @@ class BashAgent < Formula
     on_macos do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/cagent-darwin-arm64"
-        sha256 "ce3ead53d1542dca18ba103ab18f64ddeea480153f5f242995fd1acd36310502"
+        sha256 "706190f60ca2ea239b730fc832743a313145c30f20c18eacb7f7e1fb2f0be0c3"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/cagent-darwin-amd64"
-        sha256 "7d7867ae5f46676205f2758b5cb2c6602fc91410f01e65d949983978c8b208cf"
+        sha256 "dbc113044a4acd748913df6fd90f24b6d34a054a7bb9d394e939b116074b5993"
       end
     end
     on_linux do
       on_arm do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/cagent-linux-arm64"
-        sha256 "dcf342398750470f24ed75fef38a7546159f7c092f8e19a74ea80cfd6b06094b"
+        sha256 "67b78b6719f66028b116b3744637e37e8e8b7e10478adb0daecc76347e7042ee"
       end
       on_intel do
         url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.2/cagent-linux-amd64"
-        sha256 "7d75abeac3a5c0eb16d2dbd85d5f972e5f053abc4aa05c49ca3df36da548c315"
+        sha256 "521b433898ba26ca330267bee8b316545edc3c7e9997475304263a4de10e6701"
       end
     end
   end
