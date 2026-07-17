@@ -3,21 +3,21 @@ class BashGuard < Formula
   homepage "https://github.com/lloydzhou/claude-bash-guard"
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.4/bash-guard-0.1.4-aarch64-apple-darwin.tar.gz"
-      sha256 "f07773e1abdbc6f571f3b818685eea5577145bf974ded30553aadd7f547d8e7a"
+      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.5/bash-guard-0.1.5-aarch64-apple-darwin.tar.gz"
+      sha256 "159543d7c925d676a93d3867b7acde66d50f8e785f73f2cf1a2bc83053f97729"
     else
-      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.4/bash-guard-0.1.4-x86_64-apple-darwin.tar.gz"
-      sha256 "eb06faf31d48f9c5076a2694046041fa18bfa22fab32dd24c7bdbd39f4d834e9"
+      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.5/bash-guard-0.1.5-x86_64-apple-darwin.tar.gz"
+      sha256 "d895e4d37ec8ea0aac4806566606827f44dcac98c9213d178f844ddaaef0198a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.4/bash-guard-0.1.4-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "3178a0a09f199a47c7024d3e4efa3d65749211e6fe4917a401fc2ae63d7c02bb"
+      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.5/bash-guard-0.1.5-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "26aca4fbec6acf2288c19f5c0750db7eb20eec4c1060fb1614b098b8ebf41db4"
     else
-      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.4/bash-guard-0.1.4-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fc2edadd55703b46a71fc8e802844924c96544d2b7a25e5eab30b502ae12d9af"
+      url "https://github.com/lloydzhou/claude-bash-guard/releases/download/v0.1.5/bash-guard-0.1.5-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "c164869d1e7aadb6c8f7cfe3f44ee8d36ef58b4bef8d9a89edff236a779bf0af"
     end
   end
 
