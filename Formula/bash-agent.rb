@@ -1,37 +1,37 @@
 class BashAgent < Formula
   desc "A lightweight coding agent that runs in your terminal"
   homepage "https://github.com/lloydzhou/bash-agent"
-  url "https://github.com/lloydzhou/bash-agent/archive/refs/tags/v4.2.21.tar.gz"
-  sha256 "6c779477b210fda844a1a19b03d2036f8dc284aa1bb8b4ae5a4fdfdbd1213012"
+  url "https://github.com/lloydzhou/bash-agent/archive/refs/tags/v4.3.0.tar.gz"
+  sha256 "6b3d9f8c473abec84b2dd7f18b68567181bd2089eb2852b90d85312cdf15f7a7"
   license "MIT"
 
   depends_on "bash" => :run
   depends_on "gawk" => :run
 
   resource "agent" do
-    url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/agent.sh"
-    sha256 "486381ac26de2075ea68a466e9328745a61d8e36f12b7397d9cee1c9a10ed8d5"
+    url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/agent.sh"
+    sha256 "e5e48e6186053ad3db28abc9afe4902606345109c666d06e8b0b4c8026ee9c8c"
   end
 
   resource "goagent" do
     on_macos do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/goagent-darwin-arm64"
-        sha256 "353a98cd4ae4de17e5450f75ff10de0d5fee9180b0c8ee2ff4c046b623456179"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/goagent-darwin-arm64"
+        sha256 "88ba37f02216297de6f0744ec994451f198e69a2f140510fe9e1b9a75e0c2e57"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/goagent-darwin-amd64"
-        sha256 "9fd08c6ee27e24fe7e9e1fcb1857a2c55b84fcc95d6222dbb86549f151507662"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/goagent-darwin-amd64"
+        sha256 "6515fd8de4065a203bc146b8006b7fa5567549189c92db6f5e3a74870ed3cfdc"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/goagent-linux-arm64"
-        sha256 "72377621b2464c485e855047ee7ee98531d2e3937b5320ea6926eecfe03cd34e"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/goagent-linux-arm64"
+        sha256 "776a3659311ac7d92adcb362610cdf7fbea50c442b30e069bec367da501d3943"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/goagent-linux-amd64"
-        sha256 "d72cf24542fd278775b922898521e642fc77267332a3c5c84d2ffb29114e1700"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/goagent-linux-amd64"
+        sha256 "5e9e93e6e364f67b7a3f63066c2b171d345c6910dc5c52cc2e37a8d9fd3eb315"
       end
     end
   end
@@ -39,22 +39,22 @@ class BashAgent < Formula
   resource "rustagent" do
     on_macos do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/rustagent-darwin-arm64"
-        sha256 "0fe1d4d29b9dc5821c74dd68d0b722e756b92cb85c165b74dee5977da5e12598"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/rustagent-darwin-arm64"
+        sha256 "696521ecd9e97ddd0000a7aa22555dccb80202ebe4e3109930fa06318f0e2ffb"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/rustagent-darwin-amd64"
-        sha256 "978d380d1912c24d3106a170d15330a3c64b1e99b9cede1bb06ffee3f14db621"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/rustagent-darwin-amd64"
+        sha256 "dbd2fc8251ced58b9e35538d3bf3e748ddbaf18d37bba9ed8a1d050903e10192"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/rustagent-linux-arm64"
-        sha256 "d9624eead4404f1ed91847fd409d969a66262d6d72082378b1ce160832348df5"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/rustagent-linux-arm64"
+        sha256 "58205d986f35ceff48cf9eac85f9c29acd426555d1990e1c93e94f4b1f4d612a"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/rustagent-linux-amd64"
-        sha256 "08f34bed0bbca2a99cab8c40af794fc52d8281a3b262df5186229e1b1321fd20"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/rustagent-linux-amd64"
+        sha256 "8ac6e9a1ed999fd1aec52d3e83c4e2b85ef2630cffa5873ab77a8301df7bc1c8"
       end
     end
   end
@@ -62,29 +62,29 @@ class BashAgent < Formula
   resource "cagent" do
     on_macos do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/cagent-darwin-arm64"
-        sha256 "65cfc1357645a34b9ee80d27ce0a0fe085a87eac72ace02dec78e28c74a90af4"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/cagent-darwin-arm64"
+        sha256 "e03800b70c30dc8335a7864464e5b46821c8df04f254d131ce30f6c463b13c5a"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/cagent-darwin-amd64"
-        sha256 "916de792f3884f4d6757ff7fe888f3b9d4014578ee2cec9ddeedb4eb1fcd9f73"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/cagent-darwin-amd64"
+        sha256 "cf9b175a61a0a6c130844661003fa178a597ad9e0d5d7d7783338d8d97b9b29c"
       end
     end
     on_linux do
       on_arm do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/cagent-linux-arm64"
-        sha256 "78f4815be608392161b8fcb9610b4e00cfde684fc58da7bd54e8974ab00a5189"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/cagent-linux-arm64"
+        sha256 "8787534e729b26de3c0f3b26b632fa46a9d9b298f0b2ef01037b6f6898d884b6"
       end
       on_intel do
-        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/cagent-linux-amd64"
-        sha256 "d80961c187deb08907a02bae53d10ff27a5554dcc083d9639dacbb994577881c"
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/cagent-linux-amd64"
+        sha256 "fea137289c7e8fa769288febc535db6545ddc67ec179a1e9392418e5947b481d"
       end
     end
   end
 
   resource "tcode" do
-    url "https://github.com/lloydzhou/bash-agent/releases/download/v4.2.21/tcode"
-    sha256 "74aabd0135a1a8e2d0d399e372df8023f257552f84bba7fb3a459ba5f3962ae7"
+    url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.0/tcode"
+    sha256 "b55157ce288da68af6f54870421d6d48eb7779a570e93c61073098ee55d846a2"
   end
 
   def install
