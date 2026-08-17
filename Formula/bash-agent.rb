@@ -87,6 +87,29 @@ class BashAgent < Formula
     sha256 "b55157ce288da68af6f54870421d6d48eb7779a570e93c61073098ee55d846a2"
   end
 
+  resource "webagent" do
+    on_macos do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.4/webagent-darwin-arm64"
+        sha256 "fcce0530b1a42a39fce781e2f91595e1a1e384e19dd092e4913e16bc4e46279f"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.4/webagent-darwin-amd64"
+        sha256 "ca8a9c5350a32a4a8215e527beb5e3d49951fe379e9cc6ea89e7a6a75ded447e"
+      end
+    end
+    on_linux do
+      on_arm do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.4/webagent-linux-arm64"
+        sha256 "ecff7329fbbefa99218446f2c6c42265bef3c9f92b03fb3811ad55127288bae6"
+      end
+      on_intel do
+        url "https://github.com/lloydzhou/bash-agent/releases/download/v4.3.4/webagent-linux-amd64"
+        sha256 "12bb23f9b8d3d54af66d5404d568c2606c4ca72a32e3aa19baa4cf85b706801f"
+      end
+    end
+  end
+
   def install
     resource("agent").stage { bin.install Dir["*"].first => "bash-agent" }
     resource("goagent").stage { bin.install Dir["*"].first => "goagent" }
@@ -96,6 +119,7 @@ class BashAgent < Formula
       bin.install_symlink bin/"cagent" => "ccagent"
     end
     resource("tcode").stage { bin.install Dir["*"].first => "tcode" }
+    resource("webagent").stage { bin.install Dir["*"].first => "webagent" }
 
     doc.install "README.md"
     doc.install "CHANGELOG.md"
@@ -108,5 +132,6 @@ class BashAgent < Formula
     assert_predicate bin/"cagent", :executable?
     assert_predicate bin/"ccagent", :executable?
     assert_predicate bin/"tcode", :executable?
+    assert_predicate bin/"webagent", :executable?
   end
 end
