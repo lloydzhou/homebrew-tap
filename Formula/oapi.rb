@@ -32,6 +32,6 @@ class Oapi < Formula
 
   test do
     assert_predicate bin/"oapi", :executable?
-    assert_match "Usage", shell_output("#{bin}/oapi 2>&1", 1)
+    assert_match "usage: oapi connect", shell_output("#{bin}/oapi 2>&1", 1)
   end
 end
