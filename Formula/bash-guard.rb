@@ -1,25 +1,25 @@
 class BashGuard < Formula
   desc "Local-first safety gate for Claude Code and Codex tool calls"
   homepage "https://github.com/lloydzhou/bash-guard"
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.2.0/bash-guard-0.2.0-aarch64-apple-darwin.tar.gz"
-      sha256 "f5fde3d79f86eed842cc0206c2bb12ed9865aba4557f3d9ced6cf4f5283543bd"
+      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.3.0/bash-guard-0.3.0-aarch64-apple-darwin.tar.gz"
+      sha256 "c5a9b6937db555c172f9866153f088c34e333ba5db1b3e81b15dc974f2de6209"
     else
-      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.2.0/bash-guard-0.2.0-x86_64-apple-darwin.tar.gz"
-      sha256 "2e275a30d296f515c8e7a01d968b75a0d113502c3897c0e25d8c211978861833"
+      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.3.0/bash-guard-0.3.0-x86_64-apple-darwin.tar.gz"
+      sha256 "33d6c7d8501a8c4836360451b2b673194583731c33a49bb96a31841e936c8efe"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.2.0/bash-guard-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "fe48541458437d7003313134ea30554978193bf194b7274f07c97d1218c34960"
+      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.3.0/bash-guard-0.3.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f8938e06ad6e91c321300f92d31684c3879bb6dacc2c8b85b6ae37f813022e06"
     else
-      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.2.0/bash-guard-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "fc3315d7d5066e487e66922c8e53a0718f6caaa91436ee3bf5019c53969a3826"
+      url "https://github.com/lloydzhou/bash-guard/releases/download/v0.3.0/bash-guard-0.3.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "b413e2bd58d7d029ef07b589d1c93b48a6719db586a666c0bb8494599a2e42c8"
     end
   end
 
