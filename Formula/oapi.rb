@@ -1,28 +1,28 @@
 class Oapi < Formula
   desc "Standalone OpenAPI command-line client: call APIs from cached specs"
   homepage "https://github.com/lloydzhou/oapi"
-  url "https://github.com/lloydzhou/oapi/archive/refs/tags/v0.1.4.tar.gz"
-  sha256 "571b08ec26bc3acbbb647bb9000d7b2e1b8a1fa8bf53821ae62b9f4d87d9ce66"
+  url "https://github.com/lloydzhou/oapi/archive/refs/tags/v0.1.5.tar.gz"
+  sha256 "d88ee6734c9c9f153665dba42daf06b337efec455399f243727ded15d71e3751"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.4/oapi-darwin-arm64"
-      sha256 "dae503adc4082697e63274efc98f340f8ba4efc7846c13b0030b54eef3f29215"
+      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.5/oapi-darwin-arm64"
+      sha256 "8c121270acaca6f51551973ca78f5836637f2be4a821420e4e2d1801a7d5256d"
     end
     on_intel do
-      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.4/oapi-darwin-amd64"
-      sha256 "acd8cb1bd1d612302e327f2297dca23cbc3a670ee117a86c9647dd3a197e2267"
+      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.5/oapi-darwin-amd64"
+      sha256 "51c7362baacc8ba407fdc5724af6f57d2d896cb46c84889498c94f3157df4b84"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.4/oapi-linux-arm64"
-      sha256 "17b8f74df314f45999780242a7a59a93ac99d9bf2742845b9389f8bebdb7f5bf"
+      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.5/oapi-linux-arm64"
+      sha256 "d931f87e265d355825b9c1ed433c5ee881fe1b2d3630c6bad02ed0aa9343b01c"
     end
     on_intel do
-      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.4/oapi-linux-amd64"
-      sha256 "462993e292b034ff5107fb69fae490b6fe6f0f40b708efa13188aa11c294df8b"
+      url "https://github.com/lloydzhou/oapi/releases/download/v0.1.5/oapi-linux-amd64"
+      sha256 "65ae2144220d9dbface95d6988e938e7560f3d639fa40cc78dbdd1312f9c3703"
     end
   end
 
